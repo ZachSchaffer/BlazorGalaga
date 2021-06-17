@@ -51,13 +51,13 @@ namespace BlazorGalaga.Services
         private int nextextralifescore;
 
         //for debugging
-        public bool debugmode = true;
+        public bool debugmode = false;
         private bool skipintro = false;
-        private bool soundoff = true;
+        private bool soundoff = false;
         private bool aion = true;
         private bool shipinvincable = false;
-        private bool showdebugdetails = true;
-        private bool infinitelives = true;
+        private bool showdebugdetails = false;
+        private bool infinitelives = false;
 
         #endregion
 
