@@ -139,7 +139,7 @@ namespace BlazorGalaga.Static.GameServiceHelpers
             await spriteService.StaticCtx.FillTextAsync("HAPPY FATHER'S DAY DAD!", 75, 136);
             await spriteService.StaticCtx.SetFillStyleAsync("Red");
             await spriteService.StaticCtx.FillTextAsync("HAPPY FATHER'S DAY DAD!", 75, 135);
-            await spriteService.StaticCtx.FillTextAsync("Love, Zach", 220, 205);
+            await spriteService.StaticCtx.FillTextAsync("Love, Zach (mush)", 140, 205);
             await spriteService.StaticCtx.SetFontAsync("38px PressStart2P");
             await spriteService.StaticCtx.FillTextAsync("namco", 250, 830);
             await spriteService.StaticCtx.SetFontAsync("26px PressStart2P");
