@@ -270,7 +270,6 @@ namespace BlazorGalaga.Services
                 }
                 else
                 {
-                    spriteService.DrawBlazorImage(new PointF(25, 10));
                     await ConsoleManager.ClearConsole(spriteService);
                     await ConsoleManager.DrawIntroScreen(spriteService, Ship);
                     return;

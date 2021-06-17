@@ -128,7 +128,18 @@ namespace BlazorGalaga.Static.GameServiceHelpers
             await spriteService.StaticCtx.FillTextAsync("ALL RIGHTS RESERVED", 110, 780);
 
             await spriteService.StaticCtx.SetFillStyleAsync("Red");
-            await spriteService.StaticCtx.FillTextAsync("BLAZORGUY.COM", 300, 100);
+            await spriteService.StaticCtx.FillTextAsync("HAPPY FATHER'S DAY DAD!", 75, 140);
+            await spriteService.StaticCtx.SetFillStyleAsync("Orange");
+            await spriteService.StaticCtx.FillTextAsync("HAPPY FATHER'S DAY DAD!", 75, 139);
+            await spriteService.StaticCtx.SetFillStyleAsync("Yellow");
+            await spriteService.StaticCtx.FillTextAsync("HAPPY FATHER'S DAY DAD!", 75, 138);
+            await spriteService.StaticCtx.SetFillStyleAsync("Green");
+            await spriteService.StaticCtx.FillTextAsync("HAPPY FATHER'S DAY DAD!", 75, 137);
+            await spriteService.StaticCtx.SetFillStyleAsync("Blue");
+            await spriteService.StaticCtx.FillTextAsync("HAPPY FATHER'S DAY DAD!", 75, 136);
+            await spriteService.StaticCtx.SetFillStyleAsync("Red");
+            await spriteService.StaticCtx.FillTextAsync("HAPPY FATHER'S DAY DAD!", 75, 135);
+            await spriteService.StaticCtx.FillTextAsync("Love, Zach", 220, 205);
             await spriteService.StaticCtx.SetFontAsync("38px PressStart2P");
             await spriteService.StaticCtx.FillTextAsync("namco", 250, 830);
             await spriteService.StaticCtx.SetFontAsync("26px PressStart2P");

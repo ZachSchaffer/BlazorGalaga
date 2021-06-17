@@ -57,7 +57,7 @@ namespace BlazorGalaga.Static
                 return;
             }
 
-            if (fire)
+            if (fire || new Random().Next() % 3 == 0)
             {
                 if (animationService.Animatables.Count(a => a.Sprite.SpriteType == Sprite.SpriteTypes.ShipMissle) < (ship.Sprite.SpriteType == Sprite.SpriteTypes.DoubleShip ? 4 : 2))
                 {
