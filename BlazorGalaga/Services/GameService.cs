@@ -296,6 +296,10 @@ namespace BlazorGalaga.Services
                 NextDiveWaitTime = Utils.Rnd(500, maxwaittimebetweendives);
             }
 
+            if (gameover) {
+                Ship.Disabled = true;
+            }
+
             //if the bug intro wave is done, increment to the next wave]
             //or start diving and firing
             if ((bugs.Count(a=>a.Started && !a.IsMoving && a.Wave == wave) > 0 || bugs.Count(a=>a.Wave==wave) == 0) && wave <= 6 && bugs.Count() > 0 && Ship.Visible)
@@ -449,13 +453,11 @@ namespace BlazorGalaga.Services
                 }
                 WaitManager.DoOnce(async () =>
                 {
-                    if (infinitelives)
-                        Lives += 1;
-
                     if (Lives >= 1)
                     {   //display ready for next life
                         await ConsoleManager.DrawConsoleReady(spriteService);
                         Ship.Disabled = true;
+                        Lives -= 1;
                     }
                     else
                     { //game over
@@ -463,6 +465,7 @@ namespace BlazorGalaga.Services
                         gameover = true;
                         SoundManager.MuteAllSounds = false;
                         SoundManager.PlaySound(SoundManager.SoundManagerSounds.gameoversong, true);
+                        Ship.Disabled = true;
                     }
                 }, WaitManager.WaitStep.enStep.ShowReady);
 
@@ -471,7 +474,6 @@ namespace BlazorGalaga.Services
                     if (!animationService.Animatables.Any(a => a.Sprite.SpriteType == Sprite.SpriteTypes.BugMissle) &&
                         !bugs.Any(a=>a.CaptureState == Bug.enCaptureState.Started) && !bugs.Any(a=>a.IsDiving))
                     {
-                        if(infinitelives) Lives -= 1;
                         Ship.HasExploded = false;
                         Ship.IsExploding = false;
                         if (Lives >= 0)
@@ -485,12 +487,6 @@ namespace BlazorGalaga.Services
                         WaitManager.ClearSteps();
                     }
                 }
-            }
-
-            //this should never happen
-            if (infinitelives && gameover)
-            {
-                throw new Exception("game over");
             }
 
             if (showdebugdetails)
